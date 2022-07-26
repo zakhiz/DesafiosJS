@@ -9,7 +9,7 @@ let iva = true;
     }else if(seguir =="no" || seguir == "no"){
         iva = false;
     }else{
-        alert("Comando no reconocido")
+        alert("Caracter no reconocido")
     }
  }
 
