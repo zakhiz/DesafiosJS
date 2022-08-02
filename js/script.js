@@ -12,7 +12,7 @@
         alert("Caracter no reconocido")
     }
  }*/
-const compraDolar = 326.00;
+/*const compraDolar = 326.00;
 const ventaDolar =321.00;
 const comprarDolar = (num) => (num / compraDolar);
 const venderDolar = (num) => (num * ventaDolar);
@@ -42,5 +42,27 @@ switch(cambio){
 do{
     continuar= prompt("¿Desea hacer otra conversion?").toLowerCase();
 }while(continuar != "si" && continuar != "no");
-}while(continuar!="no");
+}while(continuar!="no");*/
 
+
+class Mercaderia{
+    constructor(producto = "",marca = "",stock = 0,precio = 0){
+       this.producto = producto;
+       this.stock = stock;
+       this.precio = precio;
+       this.marca = marca;
+    }
+    
+}
+const producto1 = new Mercaderia("Aceite", "Natura", 100, 420);
+const producto2 = new Mercaderia("Arroz", "Gallo", 100, 200);
+const producto3 = new Mercaderia("Azucar", "Ledesma", 100, 320);
+const producto4 = new Mercaderia("Aceitunas", "Ceitun", 100, 240);
+const producto5 = new Mercaderia("Leche", "Armonia", 100, 160);
+const producto6 = new Mercaderia("Leche", "Serenisima", 100, 200);
+const producto7 = new Mercaderia("Galletitas", "Surtidas", 100, 220);
+const producto8 = new Mercaderia("Dulce de leche", "Milkaut", 100, 300);
+const producto9 = new Mercaderia("Papel higienico", "Suave", 100, 350);
+
+const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
+console.table(productos);
