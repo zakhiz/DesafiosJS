@@ -12,29 +12,28 @@
         alert("Caracter no reconocido")
     }
  }*/
-/*const compraDolar = 326.00;
-const ventaDolar =321.00;
-const comprarDolar = (num) => (num / compraDolar);
-const venderDolar = (num) => (num * ventaDolar);
-alert("Hola Bienvenido/a al convertidor de peso a dolar");
-alert("Escribe compra o venta segun la operacion que desees hacer");
+
+/*const cambiarDolar = 326.00;
+const cambiarEuro = 134.53;
+const comprarDolar = (num) => (num / cambiarDolar);
+const comprarEuro = (num) => (num / cambiarEuro);
 let continuar;
 do{
 let numero , cambio;
 do{
     numero = parseFloat(prompt("Ingrese monto a convertir"));
-    cambio = prompt("Ingrese que tipo de operacion desea hacer (compra o venta)").toLowerCase();
+    cambio = prompt("Ingrese que tipo de moneda en el que quiera hacer el cambio (dolar o euro)").toLowerCase();
     if(isNaN(numero)){
         alert("numero invalido")
     }
 
 }while(isNaN(numero) || (numero === 0 && cambio != ""));
 switch(cambio){
-    case "compra":
-        console.log(comprarDolar(numero));
+    case "dolar":
+        console.table(comprarDolar(numero));
         break;
-    case "venta":
-        console.log(venderDolar(numero));
+    case "euro":
+        console.table(comprarEuro(numero));
         break;
     default:
         alert("Operacion invalida");     
@@ -45,7 +44,9 @@ do{
 }while(continuar!="no");*/
 
 
-class Mercaderia{
+
+
+/*class Mercaderia{
     constructor(producto = "",marca = "",stock = 0,precio = 0){
        this.producto = producto;
        this.stock = stock;
@@ -65,4 +66,57 @@ const producto8 = new Mercaderia("Dulce de leche", "Milkaut", 100, 300);
 const producto9 = new Mercaderia("Papel higienico", "Suave", 100, 350);
 
 const productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8,producto9];
-console.table(productos);
+console.table(productos);*/
+
+
+
+//* Proyecto final parte 1 
+alert("Convertidor de sueldo a moneda extranjera dolar o euro");
+
+const cambiarDolar = 326.00;
+const cambiarEuro = 134.53;
+const comprarDolar = (num) => (num / cambiarDolar);
+const comprarEuro = (num) => (num / cambiarEuro);
+
+let continuar;
+do {
+    let numero, cambio;
+    do {
+        numero = parseFloat(prompt("Ingrese monto a convertir"));
+        cambio = prompt("Ingrese que tipo de moneda en el que quiera hacer el cambio (dolar o euro)").toLowerCase();
+        if (isNaN(numero)) {
+            alert("numero invalido")
+        }
+
+    } while (isNaN(numero) || (numero === 0 && cambio != ""));
+    switch (cambio) {
+        case "dolar":
+            console.table(comprarDolar(numero));
+            break;
+        case "euro":
+            console.table(comprarEuro(numero));
+            break;
+        default:
+            alert("Operacion invalida");
+    }
+    do {
+        continuar = prompt("¿Desea hacer otra conversion?").toLowerCase();
+    } while (continuar != "si" && continuar != "no");
+} while (continuar != "no");
+
+class Sueldos {
+    constructor(nombre, sueldo) {
+        this.nombre = nombre;
+        this.sueldo = sueldo;
+    }
+
+}
+
+const empleado1 = new Sueldos(prompt("ingrese el nombre del empleado 1"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
+const empleado2 = new Sueldos(prompt("ingrese el nombre del empleado 2"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
+const empleado3 = new Sueldos(prompt("ingrese el nombre del empleado 3"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
+const empleado4 = new Sueldos(prompt("ingrese el nombre del empleado 4"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
+const empleado5 = new Sueldos(prompt("ingrese el nombre del empleado ultimo empleado"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
+
+const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5];
+console.table(empleados);
