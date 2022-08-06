@@ -71,7 +71,7 @@ console.table(productos);*/
 
 
 //* Proyecto final parte 1 
-alert("Convertidor de sueldo a moneda extranjera dolar o euro");
+/*alert("Convertidor de sueldo a moneda extranjera dolar o euro");
 
 const cambiarDolar = 326.00;
 const cambiarEuro = 134.53;
@@ -119,4 +119,38 @@ const empleado4 = new Sueldos(prompt("ingrese el nombre del empleado 4"),(parseF
 const empleado5 = new Sueldos(prompt("ingrese el nombre del empleado ultimo empleado"),(parseFloat(prompt("Ingrese la conversion de sueldo aca"))));
 
 const empleados = [empleado1, empleado2, empleado3, empleado4, empleado5];
-console.table(empleados);
+console.table(empleados);*/
+
+//* DOM
+
+class Vehiculo{
+    constructor(id, marca, modelo, precio){
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.precio = precio;
+    }
+}
+
+const auto1 = new Vehiculo(1 , prompt("Ingrese la marca del coche"), prompt("Ingrese el modelo del coche"), parseFloat(prompt("Ingrese el precio del coche")));
+const auto2 = new Vehiculo(2 , prompt("Ingrese la marca del coche"), prompt("Ingrese el modelo del coche"), parseFloat(prompt("Ingrese el precio del coche")));
+const auto3 = new Vehiculo(3 , prompt("Ingrese la marca del coche"), prompt("Ingrese el modelo del coche"), parseFloat(prompt("Ingrese el precio del coche")));
+const auto4 = new Vehiculo(4 , prompt("Ingrese la marca del coche"), prompt("Ingrese el modelo del coche"), parseFloat(prompt("Ingrese el precio del coche")));
+
+const vehiculos = [auto1,auto2,auto3,auto4];
+
+const automoviles = document.getElementById("vehiculos");
+
+vehiculos.forEach(vehiculo =>{
+    automoviles.innerHTML += `
+    
+   <div class="card" id="vehiculo${vehiculo.id}" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">Marca: ${vehiculo.marca}</p>
+          <p class="card-text">Modelo: ${vehiculo.modelo}</p>
+          <p class="card-text">Precio: $${vehiculo.precio}</p>
+       </div>
+   </div>
+
+    `
+});
